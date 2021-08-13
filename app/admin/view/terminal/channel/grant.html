@@ -1,0 +1,122 @@
+<div class="layuimini-container">
+    <form id="app-form" class="layui-form layuimini-form" action="{:url('granthb')}" method="post">
+        <div class="layui-form-item">
+            <label class="layui-form-label">代理商</label>
+            <div class="layui-input-block">
+                <div id="dls"></div>
+            </div>
+        </div>
+
+
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">结算模板</label>
+            <div class="layui-input-block">
+                <div id="jiesuan"></div>
+            </div>
+        </div>
+
+        {if $admin['auth_ids']==7}
+        <div class="layui-form-item">
+            <label class="layui-form-label">机具模板</label>
+            <div class="layui-input-block">
+                <div id="jiju"></div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">提现模板</label>
+            <div class="layui-input-block">
+                <div id="tixian"></div>
+            </div>
+        </div>
+
+        {/if}
+    <input name="dataid" type="text" value="{$dataid}">
+
+        <div class="hr-line"></div>
+        <div class="layui-form-item text-center">
+            <button type="sutixianit" class="layui-btn layui-btn-normal layui-btn-sm" lay-filter id="sub">确认</button>
+            <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+        </div>
+    </form>
+</div>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+<script>
+    $('#sub').on('click', function () {
+        $("#app-form").sutixianit();
+    });
+</script>
+
+<script>
+    //人员
+    var dls = '<?php echo  json_encode($dls);?>';
+    var dls = JSON.parse(dls);
+    console.log(dls);
+    var dls = xmSelect.render({
+        el: '#dls',
+        language: 'zn',
+        tips: '请选择代理商,',
+        name: 'dls_id',
+        filterable: true,
+        radio: true,
+        clickClose: true,
+        toolbar: {
+            show: true,
+            list: ['ALL', 'CLEAR', 'REVERSE']
+        },
+        data: dls
+    })
+    var jiesuan = '<?php echo  json_encode($jiesuan);?>';
+    var jiesuan = JSON.parse(jiesuan);
+    xmSelect.render({
+        el: '#jiesuan',
+        language: 'zn',
+        tips: '请选择结算模板',
+        radio: true,
+        clickClose: true,
+        name: 'jiesuan_id',
+        filterable: true,
+        toolbar: {
+            show: true,
+            list: ['ALL', 'CLEAR', 'REVERSE']
+        },
+        data: jiesuan
+    })
+
+
+    var tixian = '<?php echo  json_encode($tixian);?>';
+    var tixian = JSON.parse(tixian);
+    xmSelect.render({
+        el: '#tixian',
+        language: 'zn',
+        tips: '请选择提现模板',
+        radio: true,
+        clickClose: true,
+        name: 'tixian_id',
+        filterable: true,
+        toolbar: {
+            show: true,
+            list: ['ALL', 'CLEAR', 'REVERSE']
+        },
+        data: tixian
+    })
+
+    // 机具
+    var jiju = '<?php echo  json_encode($jiju);?>';
+    var jiju = JSON.parse(jiju);
+    xmSelect.render({
+        el: '#jiju',
+        language: 'zn',
+        tips: '请选择机具模板',
+        radio: true,
+        clickClose: true,
+        name: 'jiju_id',
+        filterable: true,
+        toolbar: {
+            show: true,
+            list: ['ALL', 'CLEAR', 'REVERSE']
+        },
+        data: jiju
+    })
+</script>

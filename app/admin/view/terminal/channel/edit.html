@@ -1,0 +1,134 @@
+<div class="layuimini-container">
+    <form id="app-form" class="layui-form layuimini-form">
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">请选择品牌型号</label>
+            <div class="layui-input-block">
+                <select name="cate_id"  lay-search lay-verify="required">
+                    <option value="">请选择品牌型号</option>
+                    {foreach $b as $k1=>$v }
+                    <option value="{$v.id}"{if condition="$row.cate_id eq $v.id" } selected="selected" {
+                    /if}>{$v.brand}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">终端sn</label>
+            <div class="layui-input-block">
+                <input type="text" name="sn" class="layui-input"  placeholder="请输入终端sn" lay-verify="required" value="{$row.sn|default=''}">
+            </div>
+        </div>
+
+
+        <!--<div class="layui-form-item">-->
+        <!--<label class="layui-form-label">终端厂家</label>-->
+        <!--<div class="layui-input-block">-->
+        <!--<input type="text" name="terminal_outlet" class="layui-input"  placeholder="请输入终端厂家" value="">-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="layui-form-item">-->
+        <!--<label class="layui-form-label">终端状态 </label>-->
+        <!--<div class="layui-input-block">-->
+        <!--<select name="status" >-->
+        <!--<option value=''></option>-->
+        <!--{foreach $getStatusList as $k=>$v}-->
+        <!--<option value='{$k}' >{$v}</option>-->
+        <!--{/foreach}-->
+        <!--</select>-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="layui-form-item">-->
+        <!--<label class="layui-form-label">机具模板 </label>-->
+        <!--<div class="layui-input-block">-->
+        <!--<select name="jiju_id" >-->
+        <!--<option value=''></option>-->
+        <!--{foreach $jiju as $k=>$v}-->
+        <!--<option value="{$v.id}" >{$v.tname}</option>-->
+        <!--{/foreach}-->
+        <!--</select>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="layui-form-item">-->
+        <!--<label class="layui-form-label">提现模板</label>-->
+        <!--<div class="layui-input-block">-->
+        <!--<select name="tixian_id" >-->
+        <!--<option value="">请选择提现模板</option>-->
+        <!--{foreach $tixian as $k1=>$v }-->
+        <!--<option value="{$v.id}">{$v.tname}</option>-->
+        <!--{/foreach}-->
+        <!--</select>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="layui-form-item">-->
+        <!--<label class="layui-form-label">结算模板</label>-->
+        <!--<div class="layui-input-block">-->
+        <!--<select name="jiesuan_id">-->
+        <!--<option value="">请选择结算模板</option>-->
+        <!--{foreach $jiesuan as $k1=>$v }-->
+        <!--<option value="{$v.id}">{$v.tname}</option>-->
+        <!--{/foreach}-->
+        <!--</select>-->
+        <!--</div>-->
+        <!--</div>-->
+        <div class="layui-form-item">
+            <label class="layui-form-label">参与服务费活动</label>
+            <div class="layui-input-block">
+                <select name="activity" >
+                    <option value='1' {$row.activity==1?'selected':''}>不参与</option>
+                    <option value='2' {$row.activity==2?'selected':''}>参与</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">参与sim活动</label>
+            <div class="layui-input-block">
+                <select name="activity_sim" >
+                    <option value='1' {$row.activity_sim==1?'selected':''}>不参与</option>
+                    <option value='2' {$row.activity_sim==2?'selected':''}>参与</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">冻结服务费</label>
+            <div class="layui-input-block">
+                <input type="text" name="di_service_charge" class="layui-input"  placeholder="冻结服务费" value="{$row.di_service_charge|default=''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">sim服务费</label>
+            <div class="layui-input-block">
+                <input type="text" name="sim_service_charge" class="layui-input"  placeholder="sim服务费" value="{$row.sim_service_charge|default=''}">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">sim扣费(单位:天数)</label>
+            <div class="layui-input-block">
+                <input type="number" name="sim_day" class="layui-input"  placeholder="sim扣费(单位:天数)" value="{$row.sim_day|default=''}">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">3.0营销服务费短信通知编号</label>
+            <div class="layui-input-block">
+                <input type="text" name="pos_note_template" class="layui-input"  placeholder="3.0营销服务费短信通知编号" value="{$row.pos_note_template|default=''}">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">3.0流量费短信通知编号</label>
+            <div class="layui-input-block">
+                <input type="text" name="sim_note_template" class="layui-input"  placeholder="3.0流量费短信通知编号" value="{$row.sim_note_template|default=''}">
+            </div>
+        </div>
+
+        <div class="hr-line"></div>
+        <div class="layui-form-item text-center">
+            <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit>确认</button>
+            <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+        </div>
+
+    </form>
+</div>

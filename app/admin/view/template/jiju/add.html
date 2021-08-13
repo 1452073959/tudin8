@@ -1,0 +1,73 @@
+<div class="layuimini-container">
+    <form id="app-form" class="layui-form layuimini-form">
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">模板名称</label>
+            <div class="layui-input-block">
+                <input type="text" name="tname" class="layui-input" lay-verify="required" placeholder="请输入模板名称" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">激活条件</label>
+            <div class="layui-input-block">
+                <input type="text" name="activity_condition" class="layui-input" lay-verify="required" placeholder="请输入激活条件" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">激活返现</label>
+            <div class="layui-input-block">
+                <input type="text" name="activity_return" class="layui-input" lay-verify="required" placeholder="请输入激活返现" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">伪激活(激活后连续三个月每个月必须达到金额)</label>
+            <div class="layui-input-block">
+                <input type="text" name="activity_false" class="layui-input" lay-verify="required" placeholder="伪激活(激活后连续三个月每个月必须达到金额)" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">伪激活金额未达标扣款</label>
+            <div class="layui-input-block">
+                <input type="text" name="activity_false_withhold" class="layui-input" lay-verify="required" placeholder="伪激活金额未达标扣款" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">伪激活</label>
+            <div class="layui-input-block">
+                <input type="text" name="activity_false" class="layui-input" lay-verify="required" placeholder="请输入伪激活" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">激活截止时间</label>
+            <div class="layui-input-block">
+                <input type="text" name="activity_time" class="layui-input" lay-verify="required" placeholder="请输入激活截止时间" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">达标条件</label>
+            <div class="layui-input-block">
+                <input type="text" name="reach_condition" class="layui-input" lay-verify="required" placeholder="请输入达标条件" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">达标返现</label>
+            <div class="layui-input-block">
+                <input type="text" name="reach_return" class="layui-input" lay-verify="required" placeholder="请输入达标返现" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">达标截止时间</label>
+            <div class="layui-input-block">
+                <input type="text" name="reach_time" class="layui-input" lay-verify="required" placeholder="请输入达标截止时间" value="">
+            </div>
+        </div>
+
+
+        <div class="hr-line"></div>
+        <div class="layui-form-item text-center">
+            <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit>确认</button>
+            <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+        </div>
+
+    </form>
+</div>

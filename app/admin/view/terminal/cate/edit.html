@@ -1,0 +1,49 @@
+<div class="layuimini-container">
+    <form id="app-form" class="layui-form layuimini-form">
+        <div class="layui-form-item">
+            <label class="layui-form-label">品牌</label>
+            <div class="layui-input-block">
+                <input type="text" name="brand" class="layui-input" placeholder="请输入品牌" {$row.brand|default=''}>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">厂家</label>
+            <div class="layui-input-block">
+                <input type="text" name="factory" class="layui-input" placeholder="请输入厂家" {$row.factory|default=''}>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">型号</label>
+            <div class="layui-input-block">
+                <input type="text" name="model" class="layui-input" placeholder="请输入型号" {$row.model|default=''}>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">品牌机构号</label>
+            <div class="layui-input-block">
+                <input type="text" name="appid" class="layui-input" placeholder="请输入品牌机构号" {$row.appid|default=''}>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">机构号秘钥</label>
+            <div class="layui-input-block">
+                <input type="text" name="secret_key" class="layui-input" placeholder="请输入机构号秘钥" {$row.secret_key|default=''}>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label required">图片</label>
+            <div class="layui-input-block layuimini-upload">
+                <input name="img" class="layui-input layui-col-xs6" lay-reqtext="请上传型号图片" placeholder="请上传型号图片" value="{$row.img|default=''}">
+                <div class="layuimini-upload-btn">
+                    <span><a class="layui-btn" data-upload="img"><i class="fa fa-upload"></i> 上传</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="hr-line"></div>
+        <div class="layui-form-item text-center">
+            <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit>确认</button>
+            <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+        </div>
+
+    </form>
+</div>

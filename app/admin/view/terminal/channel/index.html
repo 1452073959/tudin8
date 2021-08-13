@@ -1,0 +1,15 @@
+<div class="layuimini-container">
+    <div class="layuimini-main">
+        <h1>后台冻结可即时生效!</h1>
+        <table id="currentTable" class="layui-table layui-hide"
+               data-auth-add="{:auth('terminal.channel/add')}"
+               data-auth-edit="{:auth('terminal.channel/edit')}"
+               data-auth-delete="{:auth('terminal.channel/delete')}"
+               data-auth-grant="{:auth('terminal.channel/grant')}"
+               data-auth-batch="{:auth('terminal.channel/batch')}"
+               data-auth-activity="{:auth('terminal.channel/activity')}"
+               data-auth-activity_sim="{:auth('terminal.channel/activity_sim')}"
+               lay-filter="currentTable">
+        </table>
+    </div>
+</div>
